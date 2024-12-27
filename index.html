@@ -1,0 +1,273 @@
+html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stationery E-commerce</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2f2f2f; /* Dark Grey Background */
+            margin: 0;
+            padding: 0;
+            color: #f5c242; /* Gold text color */
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f5c242; /* Gold background */
+            color: #2f2f2f; /* Dark Grey text */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .menu-icon, .cart-icon {
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        .search-bar {
+            flex: 1;
+            margin: 0 20px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 8px;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+        }
+
+        .product-page {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            background-color: #2f2f2f; /* Dark Grey background */
+        }
+
+        .product-card {
+            background-color: #333333; /* Dark grey card background */
+            border: 2px solid #f5c242; /* Gold border */
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .product-card h3 {
+            margin: 10px 0;
+            color: #f5c242; /* Gold text */
+        }
+
+        .add-to-cart-btn {
+            background-color: #f5c242; /* Gold button */
+            color: #2f2f2f; /* Dark Grey text */
+            padding: 8px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f5c242; /* Gold background */
+            color: #2f2f2f; /* Dark Grey text */
+            font-size: 18px;
+        }
+
+        .cart-page {
+            display: none;
+            padding: 20px;
+            background-color: #333333; /* Dark grey background */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            z-index: 1001;
+        }
+
+        .cart-page h2 {
+            color: #f5c242; /* Gold text */
+        }
+
+        .cart-item {
+            margin: 10px 0;
+            border-bottom: 1px solid #ccc;
+            color: #f5c242; /* Gold text */
+        }
+
+        .order-button {
+            margin-top: 20px;
+            background-color: #f5c242; /* Gold button */
+            color: #2f2f2f; /* Dark Grey text */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu-icon">&#9776;</div>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search for products...">
+        </div>
+        <div class="cart-icon">&#128722;</div>
+    </header>
+
+    <img src="c:\Users\Hp\Downloads\pexels-pixabay-207665.jpg" alt="grab the stationary" class="hero-image">
+
+    <section class="product-page" id="product-page">
+        <div class="product-card" data-product-name="Stylish Pen">
+            <img src="c:\Users\Hp\Downloads\pexels-thepaintedsquare-998591.jpg" alt="Pen">
+            <h3>Stylish Pen</h3>
+            <p>Write in style with vibrant colors!</p>
+            <button class="add-to-cart-btn" data-product="Stylish Pen">Add to Cart</button>
+        </div>
+        <div class="product-card" data-product-name="Smart Pencil">
+            <img src="c:\Users\Hp\Downloads\Pastel Black Wood HB _2B Pencil 12 Pcs Set.jpg" alt="Pencil">
+            <h3>Smart Pencil</h3>
+            <p>Perfect for precise sketches and notes!</p>
+            <button class="add-to-cart-btn" data-product="Smart Pencil">Add to Cart</button>
+        </div>
+        <div class="product-card" data-product-name="Heavy Duty Staplers">
+            <img src="c:\Users\Hp\Downloads\close-up-red-stapler.jpg" alt="Stapler">
+            <h3>Heavy Duty Staplers</h3>
+            <p>Brighten your projects with bold charts!</p>
+            <button class="add-to-cart-btn" data-product="Heavy Duty Staplers">Add to Cart</button>
+        </div>
+        <div class="product-card" data-product-name="Smart Calculator">
+            <img src="c:\Users\Hp\Downloads\pexels-pixabay-220301.jpg" alt="Calculator">
+            <h3>Smart Calculator</h3>
+            <p>Crunch numbers with ease!</p>
+            <button class="add-to-cart-btn" data-product="Smart Calculator">Add to Cart</button>
+        </div>
+        <div class="product-card" data-product-name="Adhesive Tape">
+            <img src="c:\Users\Hp\Downloads\pexels-jessbaileydesign-1117542.jpg" alt="Tape">
+            <h3>Adhesive Tape</h3>
+            <p>Strong and reliable for all fixes!</p>
+            <button class="add-to-cart-btn" data-product="Adhesive Tape">Add to Cart</button>
+        </div>
+        <div class="product-card" data-product-name="Artistic Sketch">
+            <img src="c:\Users\Hp\Downloads\pexels-nietjuh-1152665.jpg" alt="Sketch">
+            <h3>Artistic Sketch</h3>
+            <p>Bring your imagination to life!</p>
+            <button class="add-to-cart-btn" data-product="Artistic Sketch">Add to Cart</button>
+        </div>
+        <div class="product-card" data-product-name="Handy Notebook">
+            <img src="c:\Users\Hp\Downloads\pexels-thisbrandstudio-390574.jpg" alt="Notebook">
+            <h3>Handy Notebook</h3>
+            <p>Jot down your thoughts anytime!</p>
+            <button class="add-to-cart-btn" data-product="Handy Notebook">Add to Cart</button>
+        </div>
+        <div class="product-card" data-product-name="Colored Sheet">
+            <img src="c:\Users\Hp\Downloads\pexels-pixabay-159519.jpg" alt="Chalk">
+            <h3>Colored Sheet</h3>
+            <p>Vivid sheet for creative designs!</p>
+            <button class="add-to-cart-btn" data-product="Colored Sheet">Add to Cart</button>
+        </div>
+        <div class="product-card" data-product-name="Sharp Scissors">
+            <img src="c:\Users\Hp\Downloads\pexels-karolina-grabowska-4226904.jpg" alt="Scissors">
+            <h3>Sharp Scissors</h3>
+            <p>Cut with precision and ease!</p>
+            <button class="add-to-cart-btn" data-product="Sharp Scissors">Add to Cart</button>
+        </div>
+        <div class="product-card" data-product-name="Colorful Paint">
+            <img src="c:\Users\Hp\Downloads\pexels-deeanacreates-1576210.jpg" alt="Paint">
+            <h3>Colorful Paint</h3>
+            <p>Add vibrant colors to your canvas!</p>
+            <button class="add-to-cart-btn" data-product="Colorful Paint">Add to Cart</button>
+        </div>
+        <div class="product-card" data-product-name="Trendy Bag">
+            <img src="c:\Users\Hp\Downloads\school-bag-with-student-supplies.jpg" alt="Bag">
+            <h3>Trendy Bag</h3>
+            <p>Carry your essentials in style!</p>
+            <button class="add-to-cart-btn" data-product="Trendy Bag">Add to Cart</button>
+        </div>
+        <div class="product-card" data-product-name="Smart Sharpener">
+            <img src="c:\Users\Hp\Downloads\colorful-sharpeners-red-table.jpg" alt="Sharpener">
+            <h3>Smart Sharpener</h3>
+            <p>Keep your tools sharp and ready!</p>
+            <button class="add-to-cart-btn" data-product="Smart Sharpener">Add to Cart</button>
+        </div>
+    </section>
+
+    <div class="footer">
+        Thank you for visiting! 😊🎨✏📚
+    </div>
+
+    <div class="cart-page">
+        <h2>Your Cart</h2>
+        <div class="cart-items"></div>
+        <button class="order-button">Buy Now</button>
+    </div>
+
+    <script>
+        const cartIcon = document.querySelector('.cart-icon');
+        const cartPage = document.querySelector('.cart-page');
+        const orderButton = document.querySelector('.order-button');
+        const cartItems = document.querySelector('.cart-items');
+        const searchInput = document.getElementById('search-input');
+        const productPage = document.getElementById('product-page');
+        const productCards = document.querySelectorAll('.product-card');
+
+        cartIcon.addEventListener('click', () => {
+            cartPage.style.display = 'block';
+        });
+
+        orderButton.addEventListener('click', () => {
+            const address = prompt("Please enter your address:");
+            if (address) {
+                alert("Order placed successfully using Cash on Delivery!");
+                cartPage.style.display = 'none';
+            }
+        });
+
+        const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const productName = e.target.getAttribute('data-product');
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+                cartItem.textContent = productName;
+                cartItems.appendChild(cartItem);
+            });
+        });
+
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            productCards.forEach(card => {
+                const productName = card.getAttribute('data-product-name').toLowerCase();
+                if (productName.includes(searchTerm)) {
+                    card.style.display = 'block'; // Show product
+                } else {
+                    card.style.display = 'none'; // Hide product
+                }
+            });
+        });
+    </script>
+</body>
+</html>
